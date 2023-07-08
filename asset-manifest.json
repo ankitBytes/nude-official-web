@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nude-official-web/static/css/main.1b1e9e98.css",
+    "main.js": "/nude-official-web/static/js/main.2c8970b5.js",
+    "index.html": "/nude-official-web/index.html",
+    "main.1b1e9e98.css.map": "/nude-official-web/static/css/main.1b1e9e98.css.map",
+    "main.2c8970b5.js.map": "/nude-official-web/static/js/main.2c8970b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b1e9e98.css",
+    "static/js/main.2c8970b5.js"
+  ]
+}
