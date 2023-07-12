@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nude-official-web/static/css/main.1b1e9e98.css",
-    "main.js": "/nude-official-web/static/js/main.2c8970b5.js",
+    "main.css": "/nude-official-web/static/css/main.f6bc72ee.css",
+    "main.js": "/nude-official-web/static/js/main.34f18774.js",
     "index.html": "/nude-official-web/index.html",
-    "main.1b1e9e98.css.map": "/nude-official-web/static/css/main.1b1e9e98.css.map",
-    "main.2c8970b5.js.map": "/nude-official-web/static/js/main.2c8970b5.js.map"
+    "main.f6bc72ee.css.map": "/nude-official-web/static/css/main.f6bc72ee.css.map",
+    "main.34f18774.js.map": "/nude-official-web/static/js/main.34f18774.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b1e9e98.css",
-    "static/js/main.2c8970b5.js"
+    "static/css/main.f6bc72ee.css",
+    "static/js/main.34f18774.js"
   ]
 }
