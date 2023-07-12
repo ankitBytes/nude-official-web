@@ -1,3 +1,7 @@
+.navIndex {
+    z-index: 10000;
+}
+
 .swiper {
     width: 100%;
     height: 95vh;
@@ -13,29 +17,36 @@
     width: 100%;
 }
 
+.prod {
+    margin-left: 30px;
+}
+
 
 .prod-text {
-    left: 93vw;
+    left: 94vw;
     writing-mode: vertical-rl;
     position: sticky;
     top: 5em;
     /* text-orientation:sideways; */
-    margin-top: 4em;
+    /* margin-top: 4em; */
     height: auto;
 }
 
-.marProd {
-    margin-top: -22em;
-    padding-right: 5em;
+.prod-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -14em;
+    margin-right: 2.5em;
+}
+
+.card-css {
+    width: 255px;
+    height: 300px;
 }
 
 .slanted {
     background: lightgray;
     position: relative;
-    /* margin-top: 5em; */
-
-    /* z-index: 1; */
-    /* position: relative; */
 }
 
 .slanted:before {
@@ -65,124 +76,44 @@
 
 
 .footer {
-    position: relative;
-    width: 100%;
-    background: #3586ff;
-    /* min-height: 100px; */
-    margin-top: 10em;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background: #152F4F;
+    color: white;
 }
 
-.social-icon,
-.menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
+.footer .links ul {
+    list-style-type: none;
 }
 
-.social-icon__item,
-.menu__item {
-    list-style: none;
+.footer .links li a {
+    color: white;
+    transition: color .2s;
 }
 
-.social-icon__link {
-    font-size: 2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-}
-
-.social-icon__link:hover {
-    transform: translateY(-10px);
-}
-
-.menu__link {
-    font-size: 1.2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
+.footer .links li a &:hover {
     text-decoration: none;
-    opacity: 0.75;
-    font-weight: 300;
+    color: #4180CB;
 }
 
-.menu__link:hover {
-    opacity: 1;
+.about-company i {
+    font-size: 25px;
 }
 
-.footer p {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 400;
+.about-company a {
+    color: white;
+    transition: color .2s;
 }
 
-.wave {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("https://i.ibb.co/wQZVxxk/wave.png");
-    background-size: 1000px 100px;
+.about-company a &:hover {
+    color: #4180CB
 }
 
-.wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWaves 4s linear infinite;
+.location i {
+    font-size: 18px;
 }
 
-.wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animate 4s linear infinite !important;
+.copyright p {
+    border-top: 1px solid rgba(255, 255, 255, .1);
 }
-
-.wave#wave3 {
-    z-index: 1000;
-    opacity: 0.2;
-    bottom: 15px;
-    animation: animateWaves 3s linear infinite;
-}
-
-.wave#wave4 {
-    z-index: 999;
-    opacity: 0.7;
-    bottom: 20px;
-    animation: animate 3s linear infinite;
-}
-
-@keyframes animateWaves {
-    0% {
-        background-position-x: 1000px;
-    }
-
-    100% {
-        background-positon-x: 0px;
-    }
-}
-
-@keyframes animate {
-    0% {
-        background-position-x: -1000px;
-    }
-
-    100% {
-        background-positon-x: 0px;
-    }
-}
-
 
 
 
@@ -192,13 +123,10 @@
         margin-top: -2em;
     }
 
-    .marProd {
-        padding-right: 0;
-    }
 
     .prod-text {
         position: sticky;
-        top: 28em;
+        top: 15em;
     }
 
     .slanted:before {
@@ -207,6 +135,10 @@
         -ms-transform: skewY(2.8deg);
         -o-transform: skewY(2.8deg);
         transform: skewY(2.8deg);
+    }
+
+    .prod-card {
+        flex-wrap: wrap;
     }
 
     /* .slanted-text {

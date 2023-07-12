@@ -1,64 +1,49 @@
-import { Text, Input, Button } from '@nextui-org/react'
 import React from 'react'
-import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs'
+import { FaEnvelope, FaFacebookSquare, FaInstagramSquare, FaLocationPin, FaMapPin, FaPhone, FaSearchLocation, FaTwitterSquare } from 'react-icons/fa'
 
 function FooterHero() {
     return (
         <>
-            <footer class="footer">
-                <div class="waves">
+            <footer class="footer mt-5 pt-5 pb-3 px-3">
+                {/* <div class="waves">
                     <div class="wave" id="wave1"></div>
                     <div class="wave" id="wave2"></div>
                     <div class="wave" id="wave3"></div>
                     <div class="wave" id="wave4"></div>
-                </div>
-                <div className='d-flex justify-content-around flex-wrap'>
-                    <div className='mx-xl-5'>
-                        <ul class="social-icon">
-                            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                                <BsFacebook />
-                            </a></li>
-                            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                                <BsTwitter />
-                            </a></li>
-                            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                                <BsLinkedin />
-                            </a></li>
-                            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                                <BsInstagram />
-                            </a></li>
-                        </ul>
-                        <ul class="menu">
-                            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-                            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-                            <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-                            <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-                            <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-
-                        </ul>
+                </div> */}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-xs-12 about-company">
+                            <h2>nude<span className='text-danger'>.</span></h2>
+                            <p class="pr-5 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+                            <p className='my-3 mb-5'>
+                                <a href="#" className='mx-2'><FaFacebookSquare size={40} /></a>
+                                <a href="#" className='mx-2'><FaInstagramSquare size={40} /></a>
+                                <a href='#' className='mx-2'><FaTwitterSquare size={40} /></a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-xs-12 links my-2">
+                            <h3 class="mt-lg-0 mt-sm-3">Our Products</h3>
+                            <ul class="m-0 p-0 mb-0">
+                                <li className='text-danger'>- <a href="#">Lorem ipsum</a></li>
+                                <li className='text-danger'>- <a href="#">Nam mauris velit</a></li>
+                                <li className='text-danger'>- <a href="#">Etiam vitae mauris</a></li>
+                                <li className='text-danger'>- <a href="#">Fusce scelerisque</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-xs-12 location my-2">
+                            <h3 class="mt-lg-0 mt-sm-4">Location</h3>
+                            <p><FaMapPin size={20}/>&nbsp;&nbsp;22, Lorem ipsum dolor, consectetur adipiscing</p>
+                            <p class="mb-0"><FaPhone size={20}/>&nbsp;&nbsp;+91 7008297411</p>
+                            <p><FaEnvelope size={20}/>&nbsp;&nbsp;info@hsdf.com</p>
+                        </div>
                     </div>
-                    <div className='my-5 my-lg-0'>
-                        <div className='mx-xl-5 d-flex'>
-                            <Text h3 color='white' className='fw-normal'>Subscribe to our&nbsp;</Text>
-                            <Text h3 color='error' className='fw-bold'>Newsletter</Text>
-                        </div>
-                        <div className='mx-lg-5 my-2'>
-                            <Input
-                                width='350px'
-                                clearable
-                                bordered
-                                placeholder="Enter your email.."
-                                color='warning'
-                                size='lg'
-                            />
-                        </div>
-                        <div className='d-flex justify-content-center'>
-                            <Button color='secondary' auto>Send</Button>
+                    <div class="row mt-5">
+                        <div class="col copyright">
+                            <p class=""><small class="text-white-50">© 2019. All Rights Reserved.</small></p>
                         </div>
                     </div>
                 </div>
-                <hr color='black' />
-                <p>&copy;2023 nude | All Rights Reserved</p>
             </footer>
         </>
     )

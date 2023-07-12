@@ -20,7 +20,7 @@ function BarNav() {
 
     return (
         <>
-            <Navbar isBordered isCompact variant="sticky">
+            <Navbar isBordered isCompact variant="sticky" className='navIndex'>
                 <Navbar.Brand
                     css={{
                         "@xs": {

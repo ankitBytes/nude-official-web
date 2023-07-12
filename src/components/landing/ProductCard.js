@@ -4,7 +4,9 @@ import { Card, Text, Row, Button, Col, Spacer } from '@nextui-org/react'
 const ProductCard = () => {
     return (
         <>
-            <Card isPressable variant="shadow" css={{ w: "100%", h: "120%" }}>
+            <Card isPressable variant="shadow" className='card-css'
+             
+             >
                 <Card.Body css={{ p: 0 }}>
                     <Card.Image
                         src='https://th.bing.com/th/id/R.519ee84b18c14502bf9dd4e244863700?rik=8THhyfhnXTtlhg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fblue-tshirt-png-t-shirt-png-image-2000.png&ehk=unXPJaTM%2fIFs2pH9ypAqc8Ff68y7CZG8hx3OkCxXzVs%3d&risl=1&pid=ImgRaw&r=0'
@@ -33,7 +35,7 @@ const ProductCard = () => {
                                     <Text
                                         size={"$sm"}
                                     >
-                                        we’re going to improve the UI by using the Cards component
+                                        we’re going to improve the UI
                                     </Text>
                                 </Col>
                                 <Col css={{ width: "auto" }}>
@@ -50,7 +52,7 @@ const ProductCard = () => {
                                 </Col>
                             </Row>
                             <Spacer y={1} />
-                            <Button css={{ w: "100%" }}>Add to cart</Button>
+                            <Button css={{ w: "90%" }}>Add to cart</Button>
                         </Col>
                     </Row>
                 </Card.Footer>
