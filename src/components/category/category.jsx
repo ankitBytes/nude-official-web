@@ -6,16 +6,10 @@ import {
 } from "@mui/material";
 import { css } from "@emotion/react";
 
-import ProductCard from "../ProductCard/productCard";
 import { MyContext } from "../../context/productContext";
 import { useContext } from "react";
 import ContextProductCard from "../ProductCard/contextProductCard"
 
-import productImage from "../../assets/shoe.jpg";
-import shirtImage from "../../assets/tshirt.jpg";
-import topImage from "../../assets/top.jpg";
-import bracelet from "../../assets/bracelet.jpg";
-import neckless from "../../assets/neckless.jpg";
 
 export default function Products() {
   const styles = {

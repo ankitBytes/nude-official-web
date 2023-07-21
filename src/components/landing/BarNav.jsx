@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import * as React from "react";
+import { useContext } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -19,10 +20,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { css } from "@emotion/react";
 
 import { useNavigate } from "react-router-dom";
+import { MyContext } from "../../context/productContext";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const { products, men, women, jewelery, electronics } = useContext(MyContext);
 
   const navigate = useNavigate();
 
