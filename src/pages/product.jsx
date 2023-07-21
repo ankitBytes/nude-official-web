@@ -11,8 +11,12 @@ import {
   InputAdornment,
 } from "@mui/material";
 
+import { useEffect } from "react";
+
 import ProductCard from "../components/ProductCard/productCard";
-import CarouselWithButton from "../components/corousel/corousel.jsx";
+// import CarouselWithButton from "../components/corousel/corousel.jsx";
+import ImageCarousel from "../components/corousel/corousel.jsx";
+import { useParams } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -23,7 +27,21 @@ import shirt from "../assets/tshirt.jpg";
 import top from "../assets/top.jpg";
 
 const Product = () => {
-  const [rating, setRating] = useState(4.4);
+  const id = useParams();
+  const [productDetails, setProductDetails] = useState();
+  
+  useEffect(() => {
+    
+    fetch(`https://fakestoreapi.com/products/${id.id}`)
+    .then((res) => res.json())
+    .then((product) => {
+      setProductDetails(product)
+      console.log(product)
+    })
+    .catch((err) => console.log(`Error occured during fetchong the data of ${id}`, err));
+  }, [id])
+  const [rating, setRating] = useState();
+  
 
   const styles = {
     productName: css`
@@ -109,26 +127,26 @@ const Product = () => {
               direction={{ xs: "column", sm: "row", md: "row" }}
             >
               <Grid item sm={12} md={4} direction={"row"}>
-                <CarouselWithButton imageUrls={imageUrls} />
+              <ImageCarousel images={productDetails?.image} />
               </Grid>
 
               <Grid sm={6} md={6} xs={12} display={"flex"} alignItems={"center"}>
                 <Stack spacing={1}>
-                  <Typography sx={styles.productName}>Product1</Typography>
+                  <Typography sx={styles.productName}>{productDetails?.title}</Typography>
                   <Stack direction={"row"} spacing={1}>
                     <Rating
                       name="half-rating-read"
-                      defaultValue={rating}
+                      defaultValue={productDetails?.rating.rate}
                       precision={0.1}
                       readOnly
                     />
-                    <Typography>{label(rating)}</Typography>
+                    <Typography>{label(productDetails?.rating.rate)}</Typography>
                   </Stack>
                   <Stack sx={styles.price} direction={"row"} spacing={1}>
                     <Typography
                       sx={{ fontSize: "1.7rem", fontWeight: "bolder" }}
                     >
-                      <span>&#8377;</span>165
+                      <span>&#8377;</span>{productDetails?.price}
                     </Typography>
                     <Typography sx={{ textDecoration: "line-through", color: 'gray' }}>
                       <span>&#8377;</span>600
@@ -245,12 +263,7 @@ const Product = () => {
                   Description
                 </Typography>
                 <Typography>
-                  Perfect For Styling Hair Designed For All Hair Lengths 100%
-                  Brand New and High Quality. Hair styling comb set. Each comb
-                  has its own styling needs. Ideal for styling or just combing
-                  your hair. Durable, Anti-Static Hair Cutting Comb. Perfect for
-                  Hair Stylist to Use on All kind of Hair Style. Works well with
-                  hair styling and chemical treatments.
+                  {productDetails?.description}
                 </Typography>
               </Stack>
             </Grid>

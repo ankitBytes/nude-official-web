@@ -29,7 +29,7 @@ function App() {
             <Route path="/" element={<HomePageLayout/>}>
               <Route index element={<Landing />} />
               <Route path="category" element={<Category />} />
-              <Route path="product" element={<Product />} />
+              <Route path="product/:id" element={<Product />} />
             </Route>
             <Route path="/myaccount" element={<MyAccountLayout />}>
               <Route index element={<MyAccountPage />} />

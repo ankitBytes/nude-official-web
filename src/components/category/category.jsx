@@ -7,6 +7,9 @@ import {
 import { css } from "@emotion/react";
 
 import ProductCard from "../ProductCard/productCard";
+import { MyContext } from "../../context/productContext";
+import { useContext } from "react";
+import ContextProductCard from "../ProductCard/contextProductCard"
 
 import productImage from "../../assets/shoe.jpg";
 import shirtImage from "../../assets/tshirt.jpg";
@@ -53,6 +56,10 @@ export default function Products() {
       background: white;
     `,
   };
+
+
+  const { products } =  useContext(MyContext);
+  console.log("inside the product list")
 
   return (
     <Box sx={styles.mainC}>
@@ -138,9 +145,14 @@ export default function Products() {
             spacing={{ xs: 1, sm: 2, md: 3 }}
             sx={styles.cardContainer}
           >
-            {products.map((products, index) => (
+            {/*{products.map((product, index) => (
               <Grid item xs={12} sm={4} md={4} key={index} sx={styles.cardItem}>
-                <ProductCard products={products} />
+                <ProductCard products={ product } />
+              </Grid>
+            ))}*/}
+            {products?.map((product, index) => (
+              <Grid item xs={12} sm={4} md={4} key={index} sx={styles.cardItem}>
+                <ContextProductCard data={product} />
               </Grid>
             ))}
           </Grid>
@@ -150,110 +162,3 @@ export default function Products() {
   );
 }
 
-const products = [
-  {
-    Name: "Product1",
-    image: productImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs.1200",
-  },
-  {
-    Name: "Product2",
-    image: productImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product3",
-    image: productImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product4",
-    image: productImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product5",
-    image: shirtImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product6",
-    image: shirtImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: shirtImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: shirtImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product5",
-    image: topImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product6",
-    image: topImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: topImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: topImage,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: neckless,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: bracelet,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product7",
-    image: bracelet,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-];

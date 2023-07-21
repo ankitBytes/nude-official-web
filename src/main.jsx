@@ -7,9 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { register } from "swiper/element/bundle";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { ContextProvider } from "./contextProvider/MyContext.jsx";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { ContextProvider } from "./context/productContext.jsx";
 
 // register Swiper custom elements
 register();
@@ -17,13 +17,13 @@ register();
 AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <NextUIProvider>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <ContextProvider>
-        <App />
-    </ContextProvider>
-      </LocalizationProvider>
-    </NextUIProvider>
-  </React.StrictMode>
+  <ContextProvider>
+    <React.StrictMode>
+      <NextUIProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <App />
+        </LocalizationProvider>
+      </NextUIProvider>
+    </React.StrictMode>
+  </ContextProvider>
 );

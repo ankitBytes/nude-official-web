@@ -95,10 +95,10 @@ function ResponsiveAppBar() {
             >
               <MenuItem
                 onClick={() => {
-                  navigate("/");
+                  navigate("/category");
                 }}
               >
-                <Typography textAlign="center">Home</Typography>
+                <Typography textAlign="center">All Category</Typography>
               </MenuItem>
               <MenuItem
                 onClick={() => {
@@ -151,7 +151,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
               onClick={() => {
-                navigate("/");
+                navigate("/category");
               }}
               sx={{
                 my: 2,
@@ -164,7 +164,7 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              Home
+              All Category
             </Button>
             <Button
               onClick={() => {

@@ -40,7 +40,7 @@ const TopCategory = () => {
       <Grid container maxWidth={"xl"} spacing={1}>
         <Grid
           item
-          xs={6}
+          xs={12}
           sm={6}
           md={6}
           sx={styles.image}
@@ -52,7 +52,7 @@ const TopCategory = () => {
             style={{ height: "100%", width: "100%" }}
           />
         </Grid>
-        <Grid item xs={6} sm={6} md={6} maxHeight={"80vh"} sx={styles.image}>
+        <Grid item xs={12} sm={6} md={6} maxHeight={"80vh"} sx={styles.image}>
           <img
             src="https://images.bewakoof.com/uploads/grid/app/mid-size-hygiene-revamp-customise-model-desktop-new-1689142924.jpg"
             alt=""
