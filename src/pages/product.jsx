@@ -22,10 +22,6 @@ import { useState } from "react";
 
 import { css } from "@emotion/react";
 
-import Image from "../assets/shoe.jpg";
-import shirt from "../assets/tshirt.jpg";
-import top from "../assets/top.jpg";
-
 const Product = () => {
   const id = useParams();
   const [productDetails, setProductDetails] = useState();
@@ -274,7 +270,7 @@ const Product = () => {
             >
               Related Products
             </Typography>
-            <Grid
+            {/*<Grid
               container
               spacing={{ xs: 1, sm: 2, md: 3 }}
               sx={styles.cardContainer}
@@ -291,45 +287,12 @@ const Product = () => {
                   <ProductCard products={products} />
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
+              </Grid>*/}
+              </Grid>
         </Stack>
       </Container>
     </Box>
   );
 };
-
-const products = [
-  {
-    Name: "Product1",
-    image: Image,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs.1200",
-  },
-  {
-    Name: "Product2",
-    image: shirt,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product3",
-    image: Image,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-  {
-    Name: "Product4",
-    image: shirt,
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae",
-    price: "Rs. 1200",
-  },
-];
-
-const imageUrls = [shirt, Image, top];
 
 export default Product;

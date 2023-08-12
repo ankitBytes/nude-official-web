@@ -21,6 +21,7 @@ import { css } from "@emotion/react";
 
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../context/productContext";
+import { createContext } from "react";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -155,7 +156,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
               onClick={() => {
-                navigate("/category");
+                navigate("/category/categories");
               }}
               sx={{
                 my: 2,
@@ -172,7 +173,8 @@ function ResponsiveAppBar() {
             </Button>
             <Button
               onClick={() => {
-                navigate("/category");
+                const category = "jewelery"
+                navigate(`/category/${encodeURIComponent(category)}`);
               }}
               sx={{
                 my: 2,

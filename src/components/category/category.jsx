@@ -7,8 +7,10 @@ import {
 import { css } from "@emotion/react";
 
 import { MyContext } from "../../context/productContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ContextProductCard from "../ProductCard/contextProductCard"
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 
 export default function Products() {
@@ -51,9 +53,31 @@ export default function Products() {
     `,
   };
 
+  const { category } = useParams();
+  const [products, setCategoryProducts] = useState();
+  const [error, setError] = useState(null);
 
-  const { products } =  useContext(MyContext);
-  console.log("inside the product list")
+  useEffect(() => {
+
+    console.log(category);
+    
+    fetch(category?`https://fakestoreapi.com/products/category/${category}` : `https://fakestoreapi.com/products`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    })
+    .then((product) => {
+      setCategoryProducts(product)
+    })
+    .catch((err) => console.log(`Error occured during fetchong the data of ${category}`, err));
+  }, [category])
+
+  // const { products } =  useContext(MyContext);
+  // console.log("inside the product list") 
+
+  console.log(products)
 
   return (
     <Box sx={styles.mainC}>
